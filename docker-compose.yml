@@ -8,7 +8,7 @@ services:
     container_name: mpl-ville-server
     restart: unless-stopped
     ports:
-      - "4000:4000"
+      - "4080:4000"
     environment:
       - NODE_ENV=production
       - PORT=4000
@@ -29,7 +29,7 @@ services:
     container_name: mpl-ville-frontend
     restart: unless-stopped
     ports:
-      - "80:80"
+      - "4081:80"
     depends_on:
       - server
     networks:
