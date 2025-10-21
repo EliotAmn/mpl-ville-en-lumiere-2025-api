@@ -67,7 +67,8 @@ class ClientConn {
         this.team = team;
         this.ws.send(JSON.stringify({
             jwt_token: generateJwtToken(this.team),
-            team: this.team
+            team: this.team,
+            action: cvl.votes_enabled ? 'open_votes' : 'close_votes'
         }))
 
         this.ws.on('message', (msg: Buffer) => {
@@ -148,5 +149,3 @@ class WebSocketHandler {
 const cvl = new CVL();
 export {WebSocketHandler};
 export default cvl;
-
-

@@ -6,7 +6,7 @@ import {WebSocketHandler} from "./websocket.js";
 
 const app = express();
 const server = createServer(app);
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 // Middleware
 app.use(express.json());
