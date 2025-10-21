@@ -14,10 +14,12 @@ router.get('/api/results', (req: Request, res: Response) => {
 
 router.post('/api/start-vote', (req: Request, res: Response) => {
     cvl.openVotes()
+    res.json({ success: true });
 });
 
 router.post('/api/stop-vote', (req: Request, res: Response) => {
     cvl.closeVotes()
+    res.json({ success: true });
 });
 
 export default router;
