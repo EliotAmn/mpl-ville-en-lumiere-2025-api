@@ -1,2 +1,10 @@
 /.idea/
 /server/node_modules/
+*.d.ts
+*.d.ts.map
+*.js
+*.js.map
+
+/dist/
+
+/server/.env
