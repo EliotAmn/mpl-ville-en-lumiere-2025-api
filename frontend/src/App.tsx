@@ -28,10 +28,11 @@ function App() {
   }, []);
 
   const connectWebSocket = () => {
-    const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-    const wsHost = import.meta.env.VITE_WS_HOST || window.location.hostname;
-    const wsPort = import.meta.env.VITE_WS_PORT || '4000';
-    const wsUrl = `${protocol}//${wsHost}:${wsPort}/`;
+    // const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+    // const wsHost = import.meta.env.VITE_WS_HOST || window.location.hostname;
+    // const wsPort = import.meta.env.VITE_WS_PORT || '4000';
+   // const wsUrl = `${protocol}//${wsHost}:${wsPort}/`;
+    const wsUrl = `wss://cvel-ws.eliotamanieu.fr/`;
 
     const ws = new WebSocket(wsUrl);
     wsRef.current = ws;
