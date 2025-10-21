@@ -16,7 +16,7 @@ services:
     networks:
       - mpl-network
     healthcheck:
-      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:4000/api/results"]
+      test: [ "CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:4000/api/results" ]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -34,8 +34,11 @@ services:
       - server
     networks:
       - mpl-network
+    environment:
+      - VITE_WS_HOST=cvel-ws.eliotamanieu.fr
+      - VITE_WS_PORT=443
     healthcheck:
-      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:80"]
+      test: [ "CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:80" ]
       interval: 30s
       timeout: 10s
       retries: 3
